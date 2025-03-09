@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/estilos.css" />
+  </head>
+  <body>
+    <header>
+      <h1>DOMINO'S</h1>
+    </header>
+
+    <form>
+      <fieldset>
+        <legend>Realiza tu pedido</legend>
+        <label for="txtNombre">Nombre</label>
+        <input type="text" placeholder="Nombre" name="nombree" id="txtNombre" />
+
+        <label for="txtNumero">Numero</label>
+        <input
+          type="number"
+          placeholder="Numero"
+          name="numero"
+          id="txtNumero"
+        />
+
+        <label for="selectCiudad">Ciudad</label>
+        <input list="selectCiudad" name="ciudad" />
+
+        <datalist id="selectCiudad">
+          <option value="Bogota"></option>
+          <option value="Cali"></option>
+          <option value="Md">Medellin</option>
+        </datalist>
+
+        <label for="selectPizza">Sabor</label>
+
+        <select name="pizza" id="selectPizza">
+          <option value="Muzzarella">Muzzarella</option>
+          <option value="Napolitana">Napolitana</option>
+          <option value="Calabresa">Calabresa</option>
+        </select>
+
+        <strong>Seleccione su postre</strong>
+        <div class="horizontal">
+          <label for="chocolate">Chocolate</label>
+          <input type="radio" name="postre" value="chocolate" id="chocolate" />
+
+          <label for="vainilla">Vainilla</label>
+          <input type="radio" name="postre" value="vainilla" id="vainilla" />
+
+          <label for="frutilla">Frutilla</label>
+          <input type="radio" name="postre" value="frutilla" id="frutilla" />
+        </div>
+
+        <strong>Adicionales</strong><br />
+        <div class="horizontal">
+          <label for="salsa">Salsa</label>
+          <input type="checkbox" name="salsa" id="salsa" value="yes" />
+
+          <label for="queso">Queso</label>
+          <input type="checkbox" name="queso" id="queso" value="yes" />
+
+          <label for="jamon">Jamon</label>
+          <input type="checkbox" name="jamon" id="jamon" value="yes" />
+        </div>
+
+        <label for="txtComentarios">Comentarios</label>
+        <textarea
+          name="comentarios"
+          id="txtComentarios"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <button type="submit">Enviar</button>
+        <input type="submit" value="Enviar formulario"></input>
+      </fieldset>
+    </form>
+  </body>
+</html>

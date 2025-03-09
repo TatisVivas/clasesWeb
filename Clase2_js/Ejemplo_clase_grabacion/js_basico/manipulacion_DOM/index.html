@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <section id="playlist">
+        <h2>Lista de reproducción</h2>
+        <div id="playlist-container">
+          <ol id="lista-canciones">
+            <li>
+              <img src="./images/boton-de-play.png" width="15px" />
+              <span class="bigger-text">Primera Cancion</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section>
+        <h2>Tus canciones favoritas</h2>
+        <div id="song-list-container">
+          <article class="music-card flex">
+            <img
+              src="./images/album_1.jpg"
+              alt=""
+              width="100px"
+              height="100px"
+            />
+            <div class="music-card-info">
+              <div class="music-card-text">
+                <div>
+                  <span class="negrilla">Cancion: </span
+                  ><span class="cancion">Cancion 1</span>
+                </div>
+                <div><span class="negrilla">Artista: </span>Bad Bunny</div>
+                <div><span class="negrilla">Album: </span>Un verano sin ti</div>
+              </div>
+              <div class="music-card-buttons flex">
+                <button type="button" class="btn btn-primary">
+                  Añadir siguiente
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary siguiente"
+                  data-id="1"
+                  id="boton_especial"
+                  onClick="mostrarMensaje(this)"
+                >
+                  Añadir al final
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="music-card flex">
+            <img
+              src="./images/album_1.jpg"
+              alt=""
+              width="100px"
+              height="100px"
+              id="modificar"
+            />
+            <div class="music-card-info">
+              <div class="music-card-text">
+                <div>
+                  <span class="negrilla">Cancion: </span
+                  ><span class="cancion">Cancion 2</span>
+                </div>
+                <div><span class="negrilla">Artista: </span>Bad Bunny</div>
+                <div><span class="negrilla">Album: </span>Un verano sin ti</div>
+              </div>
+              <div class="music-card-buttons flex">
+                <button type="button" class="btn btn-primary">
+                  Añadir siguiente
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary siguiente"
+                  data-id="2"
+                >
+                  Añadir al final
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="music-card flex">
+            <img
+              src="./images/album_1.jpg"
+              alt=""
+              width="100px"
+              height="100px"
+            />
+            <div class="music-card-info">
+              <div class="music-card-text">
+                <div>
+                  <span class="negrilla">Cancion: </span
+                  ><span class="cancion">Cancion 3</span>
+                </div>
+                <div><span class="negrilla">Artista: </span>Bad Bunny</div>
+                <div><span class="negrilla">Album: </span>Un verano sin ti</div>
+              </div>
+              <div class="music-card-buttons flex">
+                <button type="button" class="btn btn-primary">
+                  Añadir siguiente
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary siguiente"
+                  data-id="3"
+                >
+                  Añadir al final
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="music-card flex">
+            <img
+              src="./images/album_1.jpg"
+              alt=""
+              width="100px"
+              height="100px"
+            />
+            <div class="music-card-info">
+              <div class="music-card-text">
+                <div>
+                  <span class="negrilla">Cancion: </span
+                  ><span class="cancion">Cancion 4</span>
+                </div>
+                <div><span class="negrilla">Artista: </span>Bad Bunny</div>
+                <div><span class="negrilla">Album: </span>Un verano sin ti</div>
+              </div>
+              <div class="music-card-buttons flex">
+                <button type="button" class="btn btn-primary">
+                  Añadir siguiente
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary siguiente"
+                  data-id="4"
+                >
+                  Añadir al final
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="music-card flex">
+            <img
+              src="./images/album_1.jpg"
+              alt=""
+              width="100px"
+              height="100px"
+            />
+            <div class="music-card-info">
+              <div class="music-card-text">
+                <div>
+                  <span class="negrilla">Cancion: </span
+                  ><span class="cancion">Cancion 5</span>
+                </div>
+                <div><span class="negrilla">Artista: </span>Bad Bunny</div>
+                <div><span class="negrilla">Album: </span>Album</div>
+              </div>
+              <div class="music-card-buttons flex">
+                <button type="button" class="btn btn-primary">
+                  Añadir siguiente
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary siguiente"
+                  data-id="5"
+                >
+                  Añadir al final
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="music-card flex">
+            <img
+              src="./images/album_2.jpg"
+              alt=""
+              width="100px"
+              height="100px"
+            />
+            <div class="music-card-info">
+              <div class="music-card-text">
+                <div>
+                  <span class="negrilla">Cancion: </span
+                  ><span class="cancion">Cancion 6</span>
+                </div>
+                <div><span class="negrilla">Artista: </span>Ferxxo</div>
+                <div><span class="negrilla">Album: </span>Album</div>
+              </div>
+              <div class="music-card-buttons flex">
+                <button type="button" class="btn btn-primary">
+                  Añadir siguiente
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary siguiente"
+                  data-id="6"
+                >
+                  Añadir al final
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="music-card flex">
+            <img
+              src="./images/album_2.jpg"
+              alt=""
+              width="100px"
+              height="100px"
+            />
+            <div class="music-card-info">
+              <div class="music-card-text">
+                <div>
+                  <span class="negrilla">Cancion: </span
+                  ><span class="cancion">Cancion 7</span>
+                </div>
+                <div><span class="negrilla">Artista: </span>Ferxxo</div>
+                <div><span class="negrilla">Album: </span>Album</div>
+              </div>
+              <div class="music-card-buttons flex">
+                <button type="button" class="btn btn-primary">
+                  Añadir siguiente
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary siguiente"
+                  data-id="7"
+                >
+                  Añadir al final
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="music-card flex">
+            <img
+              src="./images/album_2.jpg"
+              alt=""
+              width="100px"
+              height="100px"
+            />
+            <div class="music-card-info">
+              <div class="music-card-text">
+                <div>
+                  <span class="negrilla">Cancion: </span
+                  ><span class="cancion">Cancion 8</span>
+                </div>
+                <div><span class="negrilla">Artista: </span>Ferxxo</div>
+                <div><span class="negrilla">Album: </span>Album</div>
+              </div>
+              <div class="music-card-buttons flex">
+                <button type="button" class="btn btn-primary">
+                  Añadir siguiente
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary siguiente"
+                  data-id="8"
+                >
+                  Añadir al final
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="music-card flex">
+            <img
+              src="./images/album_2.jpg"
+              alt=""
+              width="100px"
+              height="100px"
+            />
+            <div class="music-card-info">
+              <div class="music-card-text">
+                <div>
+                  <span class="negrilla">Cancion: </span
+                  ><span class="cancion">Cancion 9</span>
+                </div>
+                <div><span class="negrilla">Artista: </span>Ferxxo</div>
+                <div><span class="negrilla">Album: </span>Album</div>
+              </div>
+              <div class="music-card-buttons flex">
+                <button type="button" class="btn btn-primary">
+                  Añadir siguiente
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary siguiente"
+                  data-id="9"
+                >
+                  Añadir al final
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="music-card flex">
+            <img
+              src="./images/album_2.jpg"
+              alt=""
+              width="100px"
+              height="100px"
+            />
+            <div class="music-card-info">
+              <div class="music-card-text">
+                <div>
+                  <span class="negrilla">Cancion: </span
+                  ><span class="cancion">Cancion 10</span>
+                </div>
+                <div><span class="negrilla">Artista: </span>Ferxxo</div>
+                <div><span class="negrilla">Album: </span>Album</div>
+              </div>
+              <div class="music-card-buttons flex">
+                <button type="button" class="btn btn-primary">
+                  Añadir siguiente
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary siguiente"
+                  data-id="10"
+                >
+                  Añadir al final
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="music-card flex">
+            <img
+              src="./images/album_3.jpg"
+              alt=""
+              width="100px"
+              height="100px"
+            />
+            <div class="music-card-info">
+              <div class="music-card-text">
+                <div>
+                  <span class="negrilla">Cancion: </span
+                  ><span class="cancion">Cancion 11</span>
+                </div>
+                <div><span class="negrilla">Artista: </span>Juanes</div>
+                <div><span class="negrilla">Album: </span>Mi sangre</div>
+              </div>
+              <div class="music-card-buttons flex">
+                <button type="button" class="btn btn-primary">
+                  Añadir siguiente
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary siguiente"
+                  data-id="11"
+                >
+                  Añadir al final
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="music-card flex">
+            <img
+              src="./images/album_3.jpg"
+              alt=""
+              width="100px"
+              height="100px"
+            />
+            <div class="music-card-info">
+              <div class="music-card-text">
+                <div>
+                  <span class="negrilla">Cancion: </span
+                  ><span class="cancion">Cancion 12</span>
+                </div>
+                <div><span class="negrilla">Artista: </span>Juanes</div>
+                <div><span class="negrilla">Album: </span>Mi sangre</div>
+              </div>
+              <div class="music-card-buttons flex">
+                <button type="button" class="btn btn-primary">
+                  Añadir siguiente
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary siguiente"
+                  data-id="12"
+                >
+                  Añadir al final
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="music-card flex">
+            <img
+              src="./images/album_3.jpg"
+              alt=""
+              width="100px"
+              height="100px"
+            />
+            <div class="music-card-info">
+              <div class="music-card-text">
+                <div>
+                  <span class="negrilla">Cancion: </span
+                  ><span class="cancion">Cancion 13</span>
+                </div>
+                <div><span class="negrilla">Artista: </span>Juanes</div>
+                <div><span class="negrilla">Album: </span>Mi sangre</div>
+              </div>
+              <div class="music-card-buttons flex">
+                <button type="button" class="btn btn-primary">
+                  Añadir siguiente
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary siguiente"
+                  data-id="13"
+                >
+                  Añadir al final
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="music-card flex">
+            <img
+              src="./images/album_3.jpg"
+              alt=""
+              width="100px"
+              height="100px"
+            />
+            <div class="music-card-info">
+              <div class="music-card-text">
+                <div>
+                  <span class="negrilla">Cancion: </span
+                  ><span class="cancion">Cancion 14</span>
+                </div>
+                <div><span class="negrilla">Artista: </span>Juanes</div>
+                <div><span class="negrilla">Album: </span>Mi sangre</div>
+              </div>
+              <div class="music-card-buttons flex">
+                <button type="button" class="btn btn-primary">
+                  Añadir siguiente
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary siguiente"
+                  data-id="14"
+                >
+                  Añadir al final
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+  <script src="./js/script.js"></script>
+</html>

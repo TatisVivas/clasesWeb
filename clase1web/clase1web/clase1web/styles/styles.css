@@ -1,0 +1,217 @@
+/*Selectores para seleccionar a cuales etiquetas les doy artibutos*/
+ul{
+    background-color: black;
+}
+.small{
+    font-size: 14px;
+}
+
+.text-center{
+    text-align: center;
+}
+#top-songs{
+    font-style: italic;
+}
+
+/*aplicar a todos los elementos del html
+*{
+    border: 1px solid red;
+}
+*/
+    
+.small.text-center{
+    color: rebeccapurple;
+    line-height: 15px;
+}
+p.text-center{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+h1, h3{
+    text-align: center;
+}
+
+ul li{
+    list-style-type: none;
+    color: white;
+}
+
+#footer, #header{
+    background-color: rgb(0, 0, 0);
+}
+.rojo{
+    color: red;
+}
+/*no me deja, solo en bloque*/
+/*
+a{
+    height: 100px;
+    display: inline-block;
+}
+
+div{
+    height: 100px;
+}
+    */
+
+/*mayor que es hijo directo, solos los h2 hijos directos del componente header*/
+#header >h2{
+    color: white;
+}
+#footer p{
+    color: white;
+}
+
+/*PSEUDOSELECTORES: */
+#header li:hover{
+    font-size: 17px;
+    text-decoration: underline;
+}
+
+/*para las tablas un pseudo selector*/
+tr:nth-child(even){ /*para las filas pares*/
+    background-color: #f3b6b6;
+}
+
+a:link{
+    text-decoration: none;
+}
+#footer a:visited{
+    color: white;
+}
+/*
+#ejemplo{
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px  15px 20px 25px;
+}
+*/
+p{
+    margin: 10px;
+    padding: 10px;
+}
+html,body{
+    padding: 0;
+    margin: 0;
+}
+
+#header h2{
+    margin: 0;
+}
+
+#header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10 10px;
+    align-items: center;
+}
+#header ul{
+    display: flex;
+    margin: 20px;   
+    
+}
+table{
+    width: 50%;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    display: flex;
+    /*width: 48%;*/
+    align-items: center;
+    border: 1px solid rgb(5, 3, 3);
+    border-radius: 3px;
+    padding: 5px; /* Added padding for internal margin */
+    /*margin: 5px;*/
+}
+
+
+.artistas{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+/*calcula que contenido + borde sean esos 50%*/
+
+#footer{
+    display: flex;
+    flex-direction: row;
+
+}
+#social{
+    display: flex;
+    flex-grow: 1;
+    justify-content: end;
+}
+#social a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+#social p{
+    margin: 0;
+}
+
+#presentacion{
+    height: 500px;
+    background-image: url('https://img.freepik.com/premium-photo/loving-rock-music-design-concept_250469-11754.jpg?semt=ais_hybrid');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#presentacion *{
+    color: rgb(255, 255, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 10px;
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {  }
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { 
+    /*
+    .azul{
+        background-color: blue;
+    }
+        */
+    .col-md-6{
+        width: 50%;
+    }
+ }
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+    /*
+    .verde{
+        background-color: green;
+    }
+        */
+    .col-lg-4{
+        width: 33.33%;
+    }
+ }
+
+/* X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+    /*.amarillo{
+        background-color: yellow;
+    }*/
+    -col-xlg-3{
+        width: 25%;
+    }
+ }
+
+/* XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {  }

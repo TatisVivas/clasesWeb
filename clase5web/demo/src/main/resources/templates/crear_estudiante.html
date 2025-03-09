@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<title>Document</title>
+</head>
+
+<body>
+    <form th:object="${estudiante}" th:action="@{/student/agregar}" method="post">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input th:field="*{nombre}" type="text" id="nombre" placeholder="Ingresa tu nombre" required>
+            </div>
+            <div class="form-group">
+            <label for="correo">Correo</label>
+            <input th:field="*{correo}" type="email" id="correo" placeholder="Ingresa tu correo" required>
+            </div>
+
+            <div class="form-group">
+            <label for="carrera">Carrera</label>
+            <input th:field="*{carrera}" type="text" id="carrera" placeholder="Ingresa tu carrera" required>
+            </div>
+
+            <div class="form-group">
+            <label for="semestre">Semestre</label>
+            <input th:field="*{semestre}" type="text" id="semestre" placeholder="Ingresa tu semestre" required>
+            </div>
+
+            <button type="submit" class ="btn btn-primary">Guardar</button>
+
+    </form>
+
+</body>
+
+</html>
