@@ -1,17 +1,21 @@
 package com.example.demo.errorHandling;
 
-public class NotFoundException extends RuntimeException{
-    private int id;
+public class NotFoundException extends RuntimeException {
+    private Long id;
+    private String message;
 
-    public NotFoundException(int id) {
+    public NotFoundException(Long id) {
+        super("No se encontró el estudiante con ID: " + id);
         this.id = id;
+        this.message = "No se encontró el estudiante con ID: " + id;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
-    public void setId(int id) {
-        this.id = id;
-    }
 
+    @Override
+    public String getMessage() {
+        return message;
+    }
 }

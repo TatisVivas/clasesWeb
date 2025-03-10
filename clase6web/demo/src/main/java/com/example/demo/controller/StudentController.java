@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.demo.errorHandling.NotFoundException;
 import com.example.demo.model.Student;
 import com.example.demo.service.StudentService;
 
@@ -31,15 +32,8 @@ public class StudentController {
     @GetMapping("/find/{id}")
     public String getStudentById(Model model, @PathVariable("id") Long identificacion) {
         Student student = service.SearchById(identificacion);
-        if(student != null){
-            model.addAttribute("estudiante", service.SearchById(identificacion));
-        }else{
-            //throw new NotFoundException(identificacion);
-        }
+        model.addAttribute("estudiante", student);
         return "mostrar_estudiante";
-
-
-
     }
 
     // los metodos get retornan una html apenas llega una petición

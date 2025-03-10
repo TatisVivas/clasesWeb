@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Student;
 import com.example.demo.repository.StudentRepository;
+import com.example.demo.errorHandling.NotFoundException;
 
 @Service
 public class StudentServiceImpl implements StudentService {
@@ -16,12 +17,14 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student SearchById(Long id) {
-        return repository.findById(id).get();
+        return repository.findById(id)
+                .orElseThrow(() -> new NotFoundException(id));
     }
 
     @Override
     public Collection<Student> SearchAll() {
-        return repository.findAll();}
+        return repository.findAll();
+    }
 
     @Override
     public void DeleteById(Long id) {
