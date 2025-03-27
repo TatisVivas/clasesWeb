@@ -1,0 +1,17 @@
+<!-- El swith muestra ciertas etiquetas dependiendo del valor del atributo-->
+<ng-container [ngSwitch]="userType">
+  <ng-container *ngSwitchCase="'user'">
+    <button>Acciones básicas</button>
+  </ng-container>
+  <ng-container *ngSwitchCase="'prof'">
+    <button>Acciones de profesor</button>
+  </ng-container>
+  <ng-container *ngSwitchCase="'admin'">
+    <a [routerLink]="['/home'] ">Acciones básicas</a>
+    <a [routerLink]="['/admin'] ">Acciones profesor</a>
+    <a [routerLink]="['/admin'] ">Acciones administrador</a>
+  </ng-container>
+</ng-container>
+<div id="content">
+  <router-outlet></router-outlet>
+</div>

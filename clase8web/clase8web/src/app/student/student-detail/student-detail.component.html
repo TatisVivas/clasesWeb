@@ -1,0 +1,24 @@
+<div>
+<h4>Student detail component</h4>
+<!-- si el estudiante existe muestro sus datos-->
+ <ng-container *ngIf="student">
+    <ul>
+        <li>Nombre: {{student.name}}</li>
+        <li>Apellido: {{student.lastName}}</li>
+        <li>Edad: {{student.age}}</li>
+        <li>Email: {{student.email}}</li>        
+        <li>Telefono: {{student.phone}}</li>
+        <li>PPA: {{student.ppa}}</li>
+        <li>Direccion: {{student.address}}</li>
+        <li>Activo: {{student.active}}</li>
+        <li>Fecha Pago: {{student.fechaPago | date: 'dd/MM/yyyy'}}</li>
+    </ul>
+ </ng-container>
+
+ <button (click)="siguiente()" class="btn btn-primary"> siguiente</button>
+ <!-- si no existe el estudiante muestro un mensaje-->
+ <ng-container *ngIf="!student">
+    <p>El estudiante no existe</p>
+ </ng-container>
+
+</div>

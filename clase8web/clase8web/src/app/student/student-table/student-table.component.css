@@ -1,0 +1,7 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+.high-ppa{
+    color: green;
+}
+.low-ppa{
+    color: red;
+}   

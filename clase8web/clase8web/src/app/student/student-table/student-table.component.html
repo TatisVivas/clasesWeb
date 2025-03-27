@@ -1,0 +1,46 @@
+<!-- tabla para mostrar estudiantes de student-List -->
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">LastName</th>
+            <th scope="col">Age</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">PPA</th>
+            <th scope="col">Active</th>
+            <th scope="col">Fecha Pago</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of studentList">
+            <ng-container *ngIf="student.age > 1">
+                <td>{{student.name | lowercase | emoticon}}</td>
+                <td>{{student.lastName | uppercase}}</td>
+                <td>{{student.age}}</td>
+                <td>{{student.email}}</td>
+                <td>{{student.phone}}</td>
+                <td [ngClass]="student.ppa < 3.7 ? 'low-ppa': 'high-ppa'">{{student.ppa}}</td>
+                <td>
+                    <i *ngIf="student.active" class="bi bi-check-circle">YES</i>
+                    <i *ngIf="!student.active" class="bi bi-x-circle">NO</i>
+                </td>
+                <td>{{student.fechaPago | date: 'dd/MM/yyyy'}}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="mostrarEstudiante(student)">Select</button>
+                    <button class="btn btn-danger" (click)="deleteStudent(student)">Delete</button>
+                    <a [routerLink]="['/student-detail', student.id]">
+                        <button class="btn btn-primary">Detail</button>
+                    </a>
+                </td>
+            </ng-container>
+        </tr>
+    </tbody>
+</table>
+<button class="btn btn-primary" (click)="mostrarFormulario()">Add Student</button>
+<app-student-detail [student]="selectedStudent"></app-student-detail>
+<ng-container *ngIf="mostrarForm">
+    <app-student-form (addStudentEvent)="addStudent($event)" (ocultarFormEvent)="ocultarForm($event)"></app-student-form>
+</ng-container>
