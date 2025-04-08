@@ -1,0 +1,39 @@
+<div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">nombre</th>
+        <th scope="col">carrera</th>
+        <th scope="col">correo</th>
+        <th scope="col">semestre</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of studentList">
+        <td>{{ student.nombre | lowercase }}</td>
+        <td>{{ student.carrera }}</td>
+        <td>{{ student.correo }}</td>
+        <td>{{ student.semestre }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="mostrarEstudiante(student)">
+            SELECT
+          </button>
+          <button class="btn btn-danger" (click)="eliminarEstudiante(student)">
+            DELETE
+          </button>
+          <a [routerLink]="['/student/detail', student.id]">
+            <button class="btn btn-primary">VER DETALLE</button>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-primary" (click)="mostrarFormulario()">AGREGAR ESTUDIANTE</button>
+  <app-student-detail [student]="selectedStudent"></app-student-detail>
+  <ng-container *ngIf="mostrarForm">
+    <app-student-form (addStudentEvent)="agregarEstudiante($event)"
+      (ocultarFormularioEvent)="ocultarFormulario($event)"></app-student-form>
+  </ng-container>
+
+</div>

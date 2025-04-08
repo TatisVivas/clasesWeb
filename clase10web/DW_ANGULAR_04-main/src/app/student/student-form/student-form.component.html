@@ -1,0 +1,27 @@
+<h4>FORMULARIO</h4>
+<!--Crearemos el formulario de dos maneras distintas-->
+<!--El #permite referenciar un objeto del html-->
+<form #studentForm="ngForm" (ngSubmit)="addStudent(studentForm)">
+    <!--form-->
+        <label for="nombre">Name</label>
+        <br>
+        <!--ngModel permite relacionar un atributo con algo del modelo-->
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="formStudent.nombre" >
+        <br>
+        <label for="apellido">carrera</label>
+        <br>
+        <input type="text" id="apellido" name="apellido" [(ngModel)]="formStudent.carrera">
+        <br>
+        <label for="email">Email</label>
+        <br>
+        <input type="email" id="email" name="email" required [(ngModel)]="formStudent.correo">
+        <br>
+        <label for="phone">Semestre</label>
+        <br>
+        <input type="phone" id="phone" name="phone" [(ngModel)]="formStudent.semestre">
+        <br>
+        <!--button type="submit" (click)="addStudentForm()">Agregar usuario</button-->
+        <button class="btn btn-primary" type="submit" [disabled]="!studentForm.form.valid">AGREGAR</button>
+        <button class="btn btn-danger" (click)="cancelar()">CANCELAR</button>
+    </form>
+{{studentForm.form.valid }}

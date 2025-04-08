@@ -1,7 +1,7 @@
 import{of, Observable, from, range, interval} from 'rxjs';
 
 of("Hello", "to", "Everyone").subscribe((value) => {//of para enviar a todo aquel que se suscriba
-    console.log("of",value); // Hello to Everyone
+    console.log("of",value); // Hello to Everyone6
 }); //que hago cuando me lleguen esos mensajes
 
 from(["hello", "to", "everyone"]).subscribe({
