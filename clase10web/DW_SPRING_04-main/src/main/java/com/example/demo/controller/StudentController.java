@@ -3,6 +3,8 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -32,42 +34,55 @@ public class StudentController {
     //http://localhost:8090/student/all
     @GetMapping("/all")
     @Operation(summary = "Encuentra todos los estudiantes")
-    public List<Student> mostrarEstudiantes() { //devolver el tipo de dato en vez de string
-        return studentService.SearchAll();
+    public ResponseEntity<List<Student>> mostrarEstudiantes() { //devolver el tipo de dato en vez de string
+        List<Student> list = studentService.SearchAll();
+        ResponseEntity<List<Student>> response = new ResponseEntity<>(list, HttpStatus.OK);
+        return response;
     }
 
     // http://localhost:8080/student/find?id=1
     @GetMapping("/find")
-    public Student mostrarInfoEstudiante(@RequestParam("id") Long id) {
+    public ResponseEntity<Student> mostrarInfoEstudiante(@RequestParam("id") Long id) {
 
         Student student = studentService.SearchById(id);
 
-        return student;
+        return new ResponseEntity<>(student, HttpStatus.OK); //devuelve el estudiante y el status de la petición
     }
 
     // http://localhost:8080/student/find/1
     @GetMapping("/find/{id}")
-    public Student mostrarInfoEstudiante2(@PathVariable("id") Long id) {
+    public ResponseEntity<Student> mostrarInfoEstudiante2(@PathVariable("id") Long id) {
         Student student = studentService.SearchById(id);
-        return student;
+        if (student == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(student, HttpStatus.OK);
     }
 
     @PostMapping("/add")
-    public void agregarEstudiante(@RequestBody Student student){
-        studentService.add(student);
+    public ResponseEntity<Student> agregarEstudiante(@RequestBody Student student){
+        Student savedStudent = studentService.add(student);
+        if (savedStudent == null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<Student>(savedStudent, HttpStatus.CREATED);
     }
 
     //delete
     //http://localhost:8090/delete/1
     @DeleteMapping("/delete/{id}")
-    public void eliminarEstudiante(@PathVariable("id") Long id){
+    public ResponseEntity<String> eliminarEstudiante(@PathVariable("id") Long id){
         studentService.deleteById(id);
+        return new ResponseEntity<>("Estudiante eliminado", HttpStatus.OK);
     }
 
 
     @PostMapping("/update/{id}")
-    public void actualizarEstudiante(@RequestBody Student student, @PathVariable("id") int id){
-        studentService.update(student);
+    public ResponseEntity<Student> actualizarEstudiante(@RequestBody Student student, @PathVariable("id") int id){
+        Student studentFind = studentService.SearchById((long) id);
+        student.setId(studentFind.getId());
+        Student updaStudent = studentService.update(student);
+        return new ResponseEntity<Student>(updaStudent, HttpStatus.OK);
     }
 
 
