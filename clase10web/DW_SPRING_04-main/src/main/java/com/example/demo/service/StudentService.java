@@ -13,9 +13,9 @@ public interface StudentService {
 
     public void deleteById(Long id);
 
-    public void update(Student student);
+    public Student update(Student student);
 
-    public void add(Student student);
+    public Student add(Student student);
 
     //nuevo 
     List<Student> findStudentsFromTeacher(String teacherID);
