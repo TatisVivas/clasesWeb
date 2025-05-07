@@ -1,0 +1,23 @@
+<div>
+  <ng-container *ngIf="student">
+  <h4>INFORMACION ESTUDIANTE</h4>
+  <!--Si el estudiante existe muestro sus datos-->
+    <ul>
+      <li id="liNombre">Nombre: {{ student.nombre }}</li>
+      <li>Apellidos: {{ student.carrera }}</li>
+      <li>Corrro: {{ student.correo }}</li>
+      <li>semestre: {{ student.semestre }}</li>
+    </ul>
+
+    <ul *ngFor="let tarea of student.tareas">
+      
+      <li class="HomeworkName">Nombre: {{ tarea.name }}</li>
+      <li>Apellidos: {{ tarea.detail }}</li>
+
+    </ul>
+
+    <button (click) = "siguiente()" class="btn btn-primary"> SIGUIENTE</button>
+
+  </ng-container>
+
+</div>
