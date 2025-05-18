@@ -1,0 +1,15 @@
+<div class="center_page">
+<h2>Login(Estudiante)</h2>
+<form #studentForm="ngForm" (ngSubmit)="login(studentForm)">
+
+
+    <div class="form-group">
+        <label for="email">Correo</label><br>
+        <input type="email" id="email" name="email" placeholder="Correo" [(ngModel)]="formUser.correo" required><br>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary" [disabled]="!studentForm.form.valid">Registrar</button>
+    
+</form>
+<a [routerLink]="['/auth/login/profesor']">¿Eres profesor? Ingresa acá</a>
+</div>

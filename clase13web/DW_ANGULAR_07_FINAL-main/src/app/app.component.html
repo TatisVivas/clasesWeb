@@ -1,0 +1,28 @@
+<div id="container">
+  <header>
+    <div id="name">
+      <img src="assets/img/logoPUJ.png" alt="LOGO PUJ" id="logo" />
+      <h1>{{ title }}</h1>
+    </div>
+
+    <!--El switch case muestra ciertas etiquetas dependiendo del valor del atributo-->
+    <div [ngSwitch]="userType">
+      <ng-container *ngSwitchCase="'user'">
+        <a>Acciones basicas</a>
+      </ng-container>
+      <ng-container *ngSwitchCase="'prof'">
+        <a>Acciones Profesor</a>
+      </ng-container>
+      <ng-container *ngSwitchCase="'admin'">
+        <a [routerLink]="['/home']">Acciones basicas</a>
+        <a [routerLink]="['/admin']">Acciones Profesor</a>
+        <a [routerLink]="['/admin']">Acciones Administrador</a>
+      </ng-container>
+    </div>
+    <a [routerLink]="['/auth/signup/estudiante']">Registrarse</a>
+    <a [routerLink]="['/auth/login/estudiante']">Ingresar</a>
+  </header>
+  <div id="content" style="height: 100%;">
+    <router-outlet></router-outlet>
+  </div>
+</div>
